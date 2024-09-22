@@ -9,6 +9,7 @@
         <AuContent @skin="large">
           <h1>Say Editor test</h1>
           <p class="au-c-heading au-c-heading--4">Een voorbeeld-toepassing voor het embedden van Say Editor.</p>
+          <p>Say editor vind je op <LinkTo @route="editor">/editor</LinkTo>.</p>
           <p>Aanmelden is momenteel niet ondersteund, in de toekomst contacteer je best <a class="au-c-link" href="https://overheid.vlaanderen.be/ict/ict-diensten/gebruikersbeheer">gebruikersbeheer Vlaanderen</a>.</p>
           <p>Het aanmelden gebeurt in een pop-up; zorg dat de instellingen van uw browser correct staan indien deze niet verschijnt.</p>
         </AuContent>
@@ -55,7 +56,7 @@
         <AuCard @textCenter="true" as |c|>
           <c.header @badgeSkin="brand" @badgeIcon="pencil">
             <AuHeading @level="3" @skin="4">
-              Say Editor
+              <LinkTo @route="editor">Say Editor</LinkTo>
             </AuHeading>
           </c.header>
           <c.content>
