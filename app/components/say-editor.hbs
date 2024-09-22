@@ -82,6 +82,13 @@
       {{#if this.controller}}
         <Sidebar as |Sidebar|>
           {{!-- This is the place to add new plugins executed by pressing a button --}}
+          <Sidebar.Collapsible @title="insert" @expandedInitially={{true}}>
+            {{!-- This is a very simple but quite powerful plugin pattern, an
+                  insert button that opens a modal, and allows you to select something to insert
+                  into the editor. As you can see, this doesn't need any
+                  special setup in the backing class, all you need is the controller--}}
+            <SimpleInsert @controller={{this.controller}}/>
+          </Sidebar.Collapsible>
           {{yield to='sidebar'}}
         </Sidebar>
       {{/if}}

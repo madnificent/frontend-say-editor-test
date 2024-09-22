@@ -1,0 +1,27 @@
+<li class='au-c-list__item'>
+  <AuButton
+    @icon="plus"
+    @iconAlignment='left'
+    @skin='link'
+    {{on 'click' this.openModal}}
+  >
+    Insert something cool
+  </AuButton>
+</li>
+<AuModal
+  @modalOpen={{this.modalOpen}}
+  @closeModal={{this.closeModal}}
+  @title="Search for a cool thing"
+  @size='large'
+  @padding='none'
+  as |modal|
+>
+  <modal.Body>
+    {{#each this.coolThings as |coolThing|}}
+      <div>
+        <AuLabel>{{coolThing}}</AuLabel>
+        <AuButton {{on 'click' (fn this.insertThing coolThing)}}>insert</AuButton>
+      </div>
+    {{/each}}
+  </modal.Body>
+</AuModal>
